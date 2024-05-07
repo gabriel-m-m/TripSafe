@@ -1,0 +1,3 @@
+Range: 0-1 (1 is better, 0 is worse) 
+
+The global Women Peace and Security Index (WPS Index) is based on 13 indicators of women's status classified under three dimensions: inclusion, justice, and insecurity. It is published by the Georgetown Institute for Women, Peace and Security and the PRIO Centre on Gender, Peace and Security with support from the Norwegian Ministry of Foreign Affairs.
