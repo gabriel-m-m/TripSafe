@@ -11,6 +11,7 @@ import Network
 
 struct MapView: View {
     private let locationManager = CLLocationManager()
+    @State private var updateLocation: Bool = true
     @State private var position: MapCameraPosition = .userLocation(followsHeading: false, fallback: .automatic)
     @State private var latitude: Float = 0.0
     @State private var longitude: Float = 0.0
@@ -52,7 +53,10 @@ struct MapView: View {
             }.onMapCameraChange { mapCameraUpdateContext in
                 latitude = Float(mapCameraUpdateContext.camera.centerCoordinate.latitude)
                 longitude = Float(mapCameraUpdateContext.camera.centerCoordinate.longitude)
-                getCurrCountry(lm: locationManager)
+                if (updateLocation) {
+                    getCurrCountry(lm: locationManager)
+                }
+                updateLocation.toggle()
             }
             VStack {
                 Spacer()
