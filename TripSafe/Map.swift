@@ -17,6 +17,9 @@ struct MapView: View {
     @State private var networkMonitor = NWPathMonitor()
     @Binding var userLocation: String
     
+    // REQUIRES: lm - a CLLocationManager object
+    // EFFECTS: If successful, updates user's current country location, otherwise does nothing
+    // MODIFIES: userLocation
     func getCurrCountry(lm: CLLocationManager) {
         if let lastLocation = lm.location {
             let geocoder = CLGeocoder()

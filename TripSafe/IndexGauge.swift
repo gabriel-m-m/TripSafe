@@ -58,6 +58,12 @@ struct IndexGauge: View {
         )
     }
     
+    
+    // REQUIRES: min - the minimum value of the gauge
+    //           curr - the current value of the gauge
+    //           max - the maximum value of the gauge
+    //           min <= curr <= max
+    // EFFECTS: Returns a Color instance for curr based on proximity to max and min
     func getColor(min: Double, curr: Double, max: Double) -> Color {
         let percentage: Double = (curr - min) / (max - min)
         var red: Double = 0

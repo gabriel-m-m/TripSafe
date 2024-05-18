@@ -45,6 +45,9 @@ struct IndexDescription: View {
     }
 }
 
+
+// REQUIRES: path - the path to the .txt file containing the index description
+// EFFECTS: If succesful, returns the contents of the .txt file, otherwise returns a failure message
 private func getString(path: String) -> String {
     if let path = Bundle.main.path(forResource: path, ofType: "txt") {
         do {
